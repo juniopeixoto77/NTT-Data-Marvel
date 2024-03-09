@@ -1,0 +1,98 @@
+.comics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f3f3f3; /* Cor de fundo de fallback */
+
+  /* Define o background */
+  background-image: url('../assets/background-ntt-data-marvel.jpg');
+  background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o contêiner */
+  background-position: center; /* Centraliza a imagem no contêiner */
+  background-repeat: no-repeat; /* Impede que a imagem de fundo seja repetida */
+
+  .comic-item {
+    flex: 0 0 calc(25% - 20px); /* Quatro itens por linha */
+    max-width: calc(25% - 20px);
+    margin-bottom: 20px;
+    position: relative;
+    display: flex; /* Torna o comic-item um flex container */
+    flex-direction: column; /* Alinha os filhos (a imagem e o título) em uma coluna */
+    align-items: center; /* Alinha os filhos (a imagem e o título) ao centro horizontalmente */
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 4px solid #ccc;
+      border-radius: 5px;
+    }
+
+    p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      overflow: hidden; /* Esconde o texto que excede o tamanho do contêiner */
+      text-overflow: ellipsis; /* Adiciona "..." ao final do texto que é cortado */
+      white-space: nowrap; /* Garante que o texto não seja quebrado em várias linhas */
+      max-width: calc(100% - 20px); /* Limita o tamanho máximo do título para o tamanho do contêiner menos o espaçamento */
+      background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semi-transparente */
+      padding: 10px; /* Espaçamento interno */
+      border-radius: 5px; /* Bordas arredondadas */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar a caixa */
+    }
+  }
+}
+
+.header {
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    width: 300px;
+  }
+}
+
+.footer {
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container input {
+  margin-right: 10px;
+}
+
+.input-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

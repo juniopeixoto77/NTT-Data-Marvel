@@ -55,8 +55,8 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  // gap: 20px;
-  // padding: 20px;
+  gap: 20px;
+  padding: 20px;
   background-color: #1f1f2e;
   background-image: url('../assets/background-ntt-data-marvel.jpg');
   background-size: auto;
@@ -155,4 +155,31 @@ html, body {
   text-decoration: underline;
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% da largura da janela de visualização */
+  height: 100vh; /* 100% da altura da janela de visualização */
+  background-color: #1f1f2e;
+  z-index: -1; /* Para garantir que a div fique atrás do conteúdo */
+  overflow: auto; /* Adicionando barra de rolagem quando necessário */
+}
 
+
+.alert {
+  font-size: 28px; /* Tamanho grande de fonte */
+  font-weight: bold; /* Texto em negrito */
+  color: black; /* Cor do texto preto */
+  border: 2px solid black; /* Borda preta */
+  border-radius: 10px; /* Bordas arredondadas */
+  background-color: white; /* Fundo branco */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento ao centro */
+  width: 50%; /* Largura do alerta */
+  margin: auto; /* Centralização horizontal */
+  position: fixed; /* Posicionamento fixo para alinhar ao centro */
+  top: 50%; /* Ajuste para o meio da tela verticalmente */
+  left: 50%; /* Ajuste para o meio da tela horizontalmente */
+  transform: translate(-50%, -50%); /* Correção para centralizar completamente */
+}

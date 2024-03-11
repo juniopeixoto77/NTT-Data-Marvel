@@ -99,38 +99,37 @@ html, body {
 }
 
 .footer {
-  background-color: #1f1f2e;; // Cor de fundo azul
-  color: white; // Cor do texto
-  padding: 20px; // Espaçamento interno
-  text-align: center; // Alinhamento do texto centralizado
+  background-color: #1f1f2e;
+  color: white;
+  padding: 20px;
+  text-align: center;
   
   p {
-    margin: 10px 0; // Espaçamento entre os parágrafos
-    font-size: 18px; // Tamanho da fonte
-    font-family: Arial, sans-serif; // Fonte
+    margin: 10px 0;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
   }
   
   a {
-    color: white; // Cor dos links
-    text-decoration: none; // Remover sublinhado dos links
-    font-size: 18px; // Tamanho da fonte
-    font-family: Arial, sans-serif; // Fonte
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
   }
   
   a:hover {
-    text-decoration: underline; // Adicionar sublinhado ao passar o mouse sobre os links
+    text-decoration: underline;
   }
 
   .linkedin, .whatsapp {
-    color: white; // Cor do texto
-    text-decoration: none; // Remover sublinhado dos links
-    font-weight: bold; // Fonte em negrito
-    font-style: italic; // Fonte em itálico
-    font-size: 20px; // Tamanho da fonte
-    font-family: 'Arial', sans-serif; // Fonte
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
   }
 }
-
 
 .input-container input {
   margin-right: 10px;
@@ -159,27 +158,26 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* 100% da largura da janela de visualização */
-  height: 100vh; /* 100% da altura da janela de visualização */
+  width: 100vw;
+  height: 100vh;
   background-color: #1f1f2e;
-  z-index: -1; /* Para garantir que a div fique atrás do conteúdo */
-  overflow: auto; /* Adicionando barra de rolagem quando necessário */
+  z-index: -1;
+  overflow: auto;
 }
 
-
 .alert {
-  font-size: 28px; /* Tamanho grande de fonte */
-  font-weight: bold; /* Texto em negrito */
-  color: black; /* Cor do texto preto */
-  border: 2px solid black; /* Borda preta */
-  border-radius: 10px; /* Bordas arredondadas */
-  background-color: white; /* Fundo branco */
-  padding: 20px; /* Espaçamento interno */
-  text-align: center; /* Alinhamento ao centro */
-  width: 50%; /* Largura do alerta */
-  margin: auto; /* Centralização horizontal */
-  position: fixed; /* Posicionamento fixo para alinhar ao centro */
-  top: 50%; /* Ajuste para o meio da tela verticalmente */
-  left: 50%; /* Ajuste para o meio da tela horizontalmente */
-  transform: translate(-50%, -50%); /* Correção para centralizar completamente */
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

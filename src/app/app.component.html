@@ -19,11 +19,7 @@
       <ng-container *ngIf="comics.length > 0; else noResults">
         <div *ngFor="let comic of comics" class="comic-item">
           <img
-            [src]="
-              comic.thumbnail.path +
-              '/standard_fantastic.' +
-              comic.thumbnail.extension
-            "
+            [src]="comic.thumbnail.path + '/standard_fantastic.' + comic.thumbnail.extension"
             alt="{{ comic.title }}"
           />
           <p (click)="redirectToComic(findDetailUrl(comic.urls))" class="link">
@@ -34,8 +30,8 @@
       <ng-template #noResults>
         <p class="alert">No comics found</p>
       </ng-template>
-      <ng-container>
-        <div class="pagination">
+      <div class="pagination">
+        <ng-container *ngIf="comics.length > 0">
           <button
             *ngFor="let page of getPageNumbers()"
             [class.selected]="page === currentPage"
@@ -43,25 +39,17 @@
           >
             {{ page }}
           </button>
-        </div>
-      </ng-container>
+        </ng-container>
+      </div>
     </div>
 
     <div class="footer">
       <p>
-        <a
-          href="https://www.linkedin.com/in/junio-peixoto-1b930b140/"
-          class="linkedin"
-          target="_blank"
-        >
+        <a href="https://www.linkedin.com/in/junio-peixoto-1b930b140/" class="linkedin" target="_blank">
           LinkedIn
         </a>
         &nbsp;|&nbsp;
-        <a
-          href="https://api.whatsapp.com/send?phone=5531983800700"
-          class="whatsapp"
-          target="_blank"
-        >
+        <a href="https://api.whatsapp.com/send?phone=5531983800700" class="whatsapp" target="_blank">
           WhatsApp
         </a>
       </p>

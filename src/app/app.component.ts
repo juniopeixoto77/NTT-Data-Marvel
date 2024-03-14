@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MarvelApiService } from './services';
 import { Comic } from './models';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +11,8 @@ export class AppComponent implements OnInit {
   originalComics: Comic[] = [];
   comics: Comic[] = [];
   searchTerm = '';
+  currentPage = 1;
+  itemsPerPage = 20;
 
   constructor(private marvelApiService: MarvelApiService) {}
 
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit {
   }
 
   loadComics(): void {
-    this.marvelApiService.getComics().subscribe(
+    const offset = (this.currentPage - 1) * this.itemsPerPage;
+    this.marvelApiService.getComics(offset).subscribe(
       (data: any) => {
         this.originalComics = data.data.results;
         this.filterComics();
@@ -32,16 +34,29 @@ export class AppComponent implements OnInit {
   }
 
   searchComics(): void {
-    this.filterComics();
+    if (this.currentPage === 1) {
+      this.filterComics();
+    } else {
+      this.currentPage = 1;
+      this.loadComics();
+    }
   }
 
   filterComics(): void {
     if (!this.searchTerm.trim()) {
-      this.comics = [...this.originalComics];
-    } else {
-      this.comics = this.originalComics.filter((comic) =>
-        comic.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+      this.comics = this.originalComics.slice(
+        (this.currentPage - 1) * this.itemsPerPage,
+        this.currentPage * this.itemsPerPage
       );
+    } else {
+      this.comics = this.originalComics
+        .filter((comic) =>
+          comic.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+        )
+        .slice(
+          (this.currentPage - 1) * this.itemsPerPage,
+          this.currentPage * this.itemsPerPage
+        );
     }
   }
 
@@ -52,5 +67,17 @@ export class AppComponent implements OnInit {
   findDetailUrl(urls: any[]): string {
     const detailUrl = urls.find((url) => url.type === 'detail');
     return detailUrl ? detailUrl.url : '#';
+  }
+
+  onPageChange(pageNumber: number): void {
+    this.currentPage = pageNumber;
+    this.loadComics();
+  }
+
+  getPageNumbers(): number[] {
+    const totalPages = Math.ceil(
+      this.originalComics.length / this.itemsPerPage
+    );
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 }
